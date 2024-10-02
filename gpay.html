@@ -13,17 +13,31 @@
       height: 100%;
       margin: 0;
       display: flex;
-      align-items: center;
-      /* Center vertically */
-      justify-content: center;
-      /* Center horizontally */
+      align-items: center; /* Center vertically */
+      justify-content: center; /* Center horizontally */
+      flex-direction: column; /* Stack items vertically */
+    }
+
+    #buttonContainer {
+      text-align: center; /* Center text within the container */
+    }
+
+    .btn-lg {
+      width: 200px;
+      height: 60px;
+      margin: 10px; /* Add some space between buttons */
     }
   </style>
-
 </head>
 
 <body>
-  <div id="container" style="text-align: center; margin-top: 100px;"></div>
+  <div id="buttonContainer">
+    <div id="container" style="margin-bottom: 20px;"></div>
+    <button class="btn btn-info btn-lg" onclick="onBuyClicked()">
+      Payment Now
+    </button>
+  </div>
+
   <script>
     // Global key for canMakepayment cache.
     const canMakePaymentCache = 'canMakePaymentCache';
@@ -242,11 +256,6 @@
     const container = document.getElementById('container');
     container.appendChild(button);
   </script>
-  <div class="col-xs-12 text-center">
-    <button class="btn btn-info btn-lg" onclick="onBuyClicked()" style="width: 200px; height: 60px;">
-      Payment Now
-    </button>
-  </div>
 </body>
 
 </html>
